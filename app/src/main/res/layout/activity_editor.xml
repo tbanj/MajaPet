@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Layout for the editor -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin"
+    tools:context=".EditorActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/user_image_profile"
+
+            android:layout_width="166dp"
+            android:layout_height="166dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="10dp"
+            android:adjustViewBounds="true"
+            android:elevation="12dp"
+
+            android:innerRadius="0dp"
+
+            android:shape="ring"
+            android:thicknessRatio="1.9"
+            app:cardCornerRadius="83dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/image_base"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ellipse"/>
+
+                <ImageView
+                    android:id="@+id/image_center"
+                    android:layout_width="41dp"
+                    android:layout_height="56dp"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/camera_inner"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+
+
+        <!-- Overview category -->
+        <LinearLayout
+            android:id="@+id/id_overview"
+            android:layout_below="@id/user_image_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                android:text="@string/category_overview"
+                style="@style/CategoryStyle" />
+
+            <!-- Input fields -->
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:orientation="vertical">
+
+                <!-- Name field -->
+                <EditText
+                    android:id="@+id/edit_pet_name"
+                    android:hint="@string/hint_pet_name"
+                    android:inputType="textCapWords"
+                    style="@style/EditorFieldStyle"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:maxLines="1"
+
+
+
+                    />
+
+                <!-- Breed field -->
+                <EditText
+                    android:id="@+id/edit_pet_breed"
+                    android:hint="@string/hint_pet_breed"
+                    android:inputType="textCapWords"
+                    style="@style/EditorFieldStyle"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Gender category -->
+        <LinearLayout
+            android:id="@+id/container_gender"
+            android:layout_below="@id/id_overview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                android:text="@string/category_gender"
+                style="@style/CategoryStyle" />
+
+            <!-- Input field -->
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <!-- Gender drop-down spinner -->
+                <Spinner
+                    android:id="@+id/spinner_gender"
+                    android:layout_height="48dp"
+                    android:layout_width="wrap_content"
+                    android:paddingRight="16dp"
+                    android:paddingEnd="16dp"
+                    android:spinnerMode="dropdown"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Measurement category -->
+        <LinearLayout
+            android:id="@+id/container_measurement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/container_gender"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                android:text="@string/category_measurement"
+                style="@style/CategoryStyle" />
+
+            <!-- Input fields -->
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:paddingLeft="4dp"
+                android:paddingStart="4dp">
+
+                <!-- Weight field -->
+                <EditText
+                    android:id="@+id/edit_pet_weight"
+                    android:hint="@string/hint_pet_weight"
+                    android:inputType="number"
+                    style="@style/EditorFieldStyle"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:maxLines="1"/>
+
+                <!-- Units for weight (kg) -->
+                <TextView
+                    android:id="@+id/label_weight_units"
+                    android:text="@string/unit_pet_weight"
+                    style="@style/EditorUnitsStyle"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+<!--tv_lifecycle_events_display-->
+
+
+
+</ScrollView>
